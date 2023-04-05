@@ -13,7 +13,7 @@ import posts from "../data/posts";
 
 const Home = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView stickyHeaderIndices={[0]} style={styles.container}>
       <Header />
       <Stories />
       {posts.map((post) => (
