@@ -16,7 +16,7 @@ import ReadMore from "@fawazahmed/react-native-read-more";
 
 const Post = ({ post }) => {
   return (
-    <View>
+    <View style={styles.post}>
       <View style={styles.header}>
         <View style={styles.username}>
           <Image style={styles.avatar} source={{ uri: post.user.avatar }} />
@@ -56,7 +56,9 @@ const Post = ({ post }) => {
       <View style={{ marginTop: 7 }}>
         <Text style={styles.comments}>View all {post.comments} comments</Text>
       </View>
-      <View style={{ marginTop: 7, flexDirection: "row" }}>
+      <View
+        style={{ marginTop: 7, flexDirection: "row", alignItems: "center" }}
+      >
         <Text style={styles.time}>{dayjs(post.date).fromNow()}</Text>
         <Text style={styles.translation}>See Translation</Text>
       </View>
@@ -67,6 +69,10 @@ const Post = ({ post }) => {
 export default Post;
 
 const styles = StyleSheet.create({
+  post: {
+    marginBottom: 20,
+  },
+
   header: {
     flexDirection: "row",
     alignItems: "center",

@@ -16,7 +16,7 @@ export default [
   {
     id: 2,
     description: `hiçbir şey göründüğü gibi değil `,
-    image: "https://pbs.twimg.com/media/FqInpn5XwAI1z6y?format=jpg&name=large",
+    image: "https://pbs.twimg.com/media/FXKIeRsXEAEZZVS?format=jpg&name=large",
     likes: 101,
     comments: 23,
     date: "2023-04-03 14:22:13",

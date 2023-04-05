@@ -13,13 +13,13 @@ import posts from "../data/posts";
 
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
       <Stories />
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
-    </View>
+    </ScrollView>
   );
 };
 
