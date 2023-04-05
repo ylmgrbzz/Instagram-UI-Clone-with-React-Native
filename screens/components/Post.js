@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { View, Text, Image, Dimensions, StyleSheet } from "react-native";
-import { Heart, Comment, Message, More, Bookmark, Dots } from "../../Icons";
+import {
+  Heart,
+  Comment,
+  Message,
+  More,
+  Dots,
+  Share,
+  Bookmark,
+} from "../../Icons";
 import { dayjs } from "../../utils";
 import SeeMore from "react-native-see-more-inline";
 import FitImage from "./FitImage";
@@ -16,6 +24,14 @@ const Post = ({ post }) => {
         <Dots size={16} fill="#262626" />
       </View>
       <FitImage src={post.image} />
+      <View style={styles.actions}>
+        <View style={styles.leftActions}>
+          <Heart style={styles.action} size={24} fill="#222" />
+          <Comment style={styles.action} size={24} fill="#222" />
+          <Share style={styles.action} size={24} fill="#222" />
+        </View>
+        <Bookmark size={24} fill="#222" />
+      </View>
     </View>
   );
 };
@@ -45,13 +61,17 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 14,
   },
-  // image: {},
-  // actions: {
-  //   flexDirection: "row",
-  //   justifyContent: "space-between",
-  //   alignItems: "center",
-  //   paddingVertical: 10,
-  // },
+  actions: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    height: 49,
+  },
+  action: {
+    marginRight: 15,
+  },
   // inner: {
   //   paddingHorizontal: 15,
   // },
@@ -59,10 +79,10 @@ const styles = StyleSheet.create({
   //   fontWeight: "600",
   //   fontSize: 14,
   // },
-  // leftActions: {
-  //   flexDirection: "row",
-  //   alignItems: "center",
-  // },
+  leftActions: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
   // icon: {
   //   marginRight: 15,
   // },
