@@ -5,25 +5,41 @@ import stories from "../../data/stories";
 
 function Stories() {
   return (
-    <ScrollView>
-      {stories.map((story) => (
-        <LinearGradient colors={["#DE0046", "#F7A34B"]} style={styles.story}>
-          <Image
-            style={styles.avatar}
-            source={{
-              uri: story.user.avatar,
-            }}
-          />
-          <Text>{story.user.name}</Text>
-        </LinearGradient>
-      ))}
-    </ScrollView>
+    <View style={styles.stories}>
+      <ScrollView horizontal={true}>
+        {stories.map((story) => (
+          <View style={styles.story}>
+            <LinearGradient
+              colors={["#DE0046", "#F7A34B"]}
+              style={styles.cover}
+            >
+              <Image
+                style={styles.avatar}
+                source={{
+                  uri: story.user.avatar,
+                }}
+              />
+            </LinearGradient>
+            <Text numberOfLines={1}>{story.user.name}</Text>
+          </View>
+        ))}
+      </ScrollView>
+    </View>
   );
 }
 
 export default Stories;
 
 const styles = StyleSheet.create({
+  stories: {
+    paddingVertically: 10,
+  },
+
+  story: {
+    width: 68,
+    marginHorizontal: 6,
+  },
+
   container: {
     paddingLeft: 0,
     paddingRight: 0,
@@ -31,10 +47,12 @@ const styles = StyleSheet.create({
     borderBottomColor: "#DBDBDB",
     paddingBottom: 10,
   },
-  story: {
-    width: 68,
-    marginRight: 15,
-    position: "relative",
+  cover: {
+    width: 65,
+    height: 65,
+    borderRadius: 34,
+    alignItems: "center",
+    justifyContent: "center",
   },
   avatarParent: {
     width: 68,
@@ -51,11 +69,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   avatar: {
-    width: 64,
-    height: 64,
-    borderWidth: 2,
+    width: 60,
+    height: 60,
+    borderWidth: 3,
     borderColor: "#fff",
-    borderRadius: 64,
+    borderRadius: 60,
   },
   title: {
     fontSize: 13,
