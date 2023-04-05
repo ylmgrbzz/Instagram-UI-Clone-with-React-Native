@@ -6,7 +6,7 @@ import stories from "../../data/stories";
 function Stories() {
   return (
     <View style={styles.stories}>
-      <ScrollView horizontal={true}>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {stories.map((story) => (
           <View style={styles.story}>
             <LinearGradient
@@ -33,6 +33,7 @@ export default Stories;
 const styles = StyleSheet.create({
   stories: {
     paddingVertically: 10,
+    borderBottomColor: "#DBDBDB",
   },
 
   story: {
