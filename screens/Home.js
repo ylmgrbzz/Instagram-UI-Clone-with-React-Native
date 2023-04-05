@@ -7,11 +7,13 @@ import {
   StyleSheet,
 } from "react-native";
 import Header from "./components/Header";
+import Stories from "./components/Stories";
 
 const Home = () => {
   return (
     <View style={styles.container}>
       <Header />
+      <Stories />
     </View>
   );
 };
