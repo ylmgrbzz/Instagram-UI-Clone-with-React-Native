@@ -12,7 +12,7 @@ import {
 import { dayjs } from "../../utils";
 import SeeMore from "react-native-see-more-inline";
 import FitImage from "./FitImage";
-import Clamp from "react-multiline-clamp";
+import ReadMore from "@fawazahmed/react-native-read-more";
 
 const Post = ({ post }) => {
   return (
@@ -38,9 +38,16 @@ const Post = ({ post }) => {
       </View>
       <View>
         <Text>
-          <Text styles={styles.user}>{post.user.name}</Text>
-          {"  "}
-          {post.description}
+          <ReadMore
+            numberOfLines={2}
+            seeLessStyle={{ color: "blue" }}
+            expandOnly={true}
+            seeMoreText="more"
+          >
+            <Text styles={styles.user}>{post.user.name}</Text>
+            {"  "}
+            {post.description}
+          </ReadMore>
         </Text>
       </View>
 
@@ -119,6 +126,8 @@ const styles = StyleSheet.create({
   },
   comments: {
     opacity: 0.5,
+    fontWeight: "600",
+    paddingVertical: 3,
   },
   time: {
     fontSize: 12,
