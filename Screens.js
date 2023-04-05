@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Image, StyleSheet, SafeAreaView } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,12 +47,64 @@ function Screens() {
           },
         }}
       />
-      <Tab.Screen name="search" component={SearchScreen} />
-      <Tab.Screen name="reel" component={ReelScreen} />
-      <Tab.Screen name="shop" component={ShopScreen} />
-      <Tab.Screen name="profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="search"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => {
+            if (focused) return <SearchFilled fill={color} />;
+            return <Search fill={color} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="reel"
+        component={ReelScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => {
+            if (focused) return <ReelFilled fill={color} />;
+            return <Reel fill={color} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="shop"
+        component={ShopScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => {
+            if (focused) return <ShopFilled fill={color} />;
+            return <Shop fill={color} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => {
+            return (
+              <Image
+                style={{
+                  ...styles.avatar,
+                  borderWidth: focused ? 1 : 0,
+                }}
+                source={{
+                  uri: "https://pbs.twimg.com/profile_images/1631002938201047053/bsNmSWQY_400x400.jpg",
+                }}
+              />
+            );
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 }
-
+const styles = StyleSheet.create({
+  avatar: {
+    width: 24,
+    height: 24,
+    borderRadius: 24,
+    borderColor: "#000",
+  },
+});
 export default Screens;
