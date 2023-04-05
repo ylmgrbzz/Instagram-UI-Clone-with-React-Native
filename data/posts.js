@@ -2,6 +2,8 @@ export default [
   {
     id: 1,
     image: "https://pbs.twimg.com/media/FqInpn5XwAI1z6y?format=jpg&name=large",
+    description: `Biz bu piyasaya yeni gelmedik geri geldik `,
+
     likes: 309,
     comments: 4,
     date: "2023-04-03 14:22:13",

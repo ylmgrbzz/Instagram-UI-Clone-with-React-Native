@@ -12,6 +12,7 @@ import {
 import { dayjs } from "../../utils";
 import SeeMore from "react-native-see-more-inline";
 import FitImage from "./FitImage";
+import Clamp from "react-multiline-clamp";
 
 const Post = ({ post }) => {
   return (
@@ -30,7 +31,25 @@ const Post = ({ post }) => {
           <Comment style={styles.action} size={24} fill="#222" />
           <Share style={styles.action} size={24} fill="#222" />
         </View>
-        <Bookmark size={24} fill="#222" />
+        <Bookmark size={22} fill="#222" />
+      </View>
+      <View style={{ marginBottom: 6 }}>
+        <Text style={styles.likes}>{post.likes} likes</Text>
+      </View>
+      <View>
+        <Text>
+          <Text styles={styles.user}>{post.user.name}</Text>
+          {"  "}
+          {post.description}
+        </Text>
+      </View>
+
+      <View style={{ marginTop: 7 }}>
+        <Text style={styles.comments}>View all {post.comments} comments</Text>
+      </View>
+      <View style={{ marginTop: 7, flexDirection: "row" }}>
+        <Text style={styles.time}>{dayjs(post.date).fromNow()}</Text>
+        <Text style={styles.translation}>See Translation</Text>
       </View>
     </View>
   );
@@ -50,6 +69,7 @@ const styles = StyleSheet.create({
   username: {
     flexDirection: "row",
     alignItems: "center",
+    // paddingRight: 10,
   },
   avatar: {
     width: 30,
@@ -72,40 +92,44 @@ const styles = StyleSheet.create({
   action: {
     marginRight: 15,
   },
-  // inner: {
-  //   paddingHorizontal: 15,
-  // },
-  // likes: {
-  //   fontWeight: "600",
-  //   fontSize: 14,
-  // },
+  user: {
+    marginLeft: 15,
+  },
+  inner: {
+    paddingHorizontal: 15,
+  },
+  likes: {
+    fontWeight: "600",
+    fontSize: 14,
+    marginLeft: 10,
+  },
   leftActions: {
     flexDirection: "row",
     alignItems: "center",
   },
-  // icon: {
-  //   marginRight: 15,
-  // },
-  // description: {
-  //   fontSize: 14,
-  //   fontWeight: "normal",
-  // },
-  // post: {
-  //   marginBottom: 20,
-  // },
-  // comments: {
-  //   opacity: 0.5,
-  // },
-  // time: {
-  //   fontSize: 12,
-  //   opacity: 0.5,
-  // },
-  // translation: {
-  //   fontSize: 12,
-  //   fontWeight: "600",
-  //   paddingLeft: 10,
-  // },
-  // hashtag: {
-  //   color: "#00376b",
-  // },
+  icon: {
+    marginRight: 15,
+  },
+  description: {
+    fontSize: 14,
+    fontWeight: "normal",
+  },
+  post: {
+    marginBottom: 20,
+  },
+  comments: {
+    opacity: 0.5,
+  },
+  time: {
+    fontSize: 12,
+    opacity: 0.5,
+  },
+  translation: {
+    fontSize: 12,
+    fontWeight: "600",
+    paddingLeft: 10,
+  },
+  hashtag: {
+    color: "#00376b",
+  },
 });
