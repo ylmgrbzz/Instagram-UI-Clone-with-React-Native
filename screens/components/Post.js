@@ -44,7 +44,9 @@ const Post = ({ post }) => {
             expandOnly={true}
             seeMoreText="more"
           >
-            <Text styles={styles.user}>{post.user.name}</Text>
+            <Text styles={styles.user} style={{ fontWeight: "600" }}>
+              {post.user.name}
+            </Text>
             {"  "}
             {post.description}
           </ReadMore>
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
   username: {
     flexDirection: "row",
     alignItems: "center",
-    // paddingRight: 10,
   },
   avatar: {
     width: 30,
@@ -127,7 +128,6 @@ const styles = StyleSheet.create({
   comments: {
     opacity: 0.5,
     fontWeight: "600",
-    paddingVertical: 3,
   },
   time: {
     fontSize: 12,
