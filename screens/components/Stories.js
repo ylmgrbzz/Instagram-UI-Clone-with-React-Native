@@ -8,7 +8,7 @@ function Stories() {
     <View style={styles.stories}>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {stories.map((story) => (
-          <View style={styles.story}>
+          <View key={story.id} style={styles.story}>
             <LinearGradient
               colors={["#DE0046", "#F7A34B"]}
               style={styles.cover}
