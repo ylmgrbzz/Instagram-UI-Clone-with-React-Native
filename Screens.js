@@ -107,4 +107,5 @@ const styles = StyleSheet.create({
     borderColor: "#000",
   },
 });
+
 export default Screens;
