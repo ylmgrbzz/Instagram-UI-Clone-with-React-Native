@@ -1,10 +1,15 @@
 import { StyleSheet, View } from "react-native";
-import { Chat, Heart, Logo, Plus } from "../../Icons";
+import { Messenger, Heart, Logo, Plus } from "../../Icons";
 
 function Header() {
   return (
     <View style={styles.header}>
       <Logo size={120} fill="#000" />
+      <View style={styles.actions}>
+        <Plus size={24} fill="#000" style={styles.icon} />
+        <Heart size={24} fill="#000" style={styles.icon} />
+        <Messenger size={24} fill="#000" style={styles.icon} />
+      </View>
     </View>
   );
 }
