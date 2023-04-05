@@ -1,5 +1,5 @@
 import { StyleSheet, View, ScrollView, Text, Image } from "react-native";
-// import { LinearGradient } from "expo-linear-gradient";
+import { LinearGradient } from "expo-linear-gradient";
 // import { PlusOutline } from "../../Icons";
 import stories from "../../data/stories";
 
@@ -7,14 +7,15 @@ function Stories() {
   return (
     <ScrollView>
       {stories.map((story) => (
-        <View>
+        <LinearGradient colors={["#DE0046", "#F7A34B"]} style={styles.story}>
           <Image
+            style={styles.avatar}
             source={{
-              uri: story.avatar,
+              uri: story.user.avatar,
             }}
           />
           <Text>{story.user.name}</Text>
-        </View>
+        </LinearGradient>
       ))}
     </ScrollView>
   );
